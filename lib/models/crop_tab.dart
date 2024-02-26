@@ -7,28 +7,33 @@ class CropTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 50,
-      width: 125,
-      decoration: BoxDecoration(
-          color: Theme.of(context).colorScheme.primary,
-          borderRadius: BorderRadius.circular(25)),
-      child: Row(
-        children: [
-          Padding(padding: EdgeInsets.all(5)),
-          Container(
-            height: 40,
-            width: 40,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: Theme.of(context).colorScheme.inversePrimary,
+    return GestureDetector(
+      onTap: () {
+        // Do what you do
+      },
+      child: Container(
+        height: 50,
+        width: 125,
+        decoration: BoxDecoration(
+            color: Theme.of(context).colorScheme.primary,
+            borderRadius: BorderRadius.circular(25)),
+        child: Row(
+          children: [
+            Padding(padding: EdgeInsets.all(5)),
+            Container(
+              height: 40,
+              width: 40,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: Theme.of(context).colorScheme.inversePrimary,
+              ),
             ),
-          ),
-          Padding(
-            padding: EdgeInsets.all(5),
-          ),
-          Text("Tables")
-        ],
+            Padding(
+              padding: EdgeInsets.all(5),
+            ),
+            Text("Tables")
+          ],
+        ),
       ),
     );
   }
