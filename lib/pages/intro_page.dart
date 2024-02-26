@@ -1,7 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:hackathon/models/crop_tab.dart';
 import 'package:hackathon/models/product_card.dart';
 
 class IntroPage extends StatelessWidget {
@@ -57,7 +59,9 @@ class IntroPage extends StatelessWidget {
             SizedBox(
               height: 20,
             ),
-            ProductCard(),
+            // ProductCard(),
+            CropTab(),
+            
           ],
         ));
   }
