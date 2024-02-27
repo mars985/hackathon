@@ -1,9 +1,14 @@
 import 'package:firebase_ui_auth/firebase_ui_auth.dart';
 import 'package:flutter/material.dart';
+
+import 'package:hackathon/Themes/Demo.dart';
+import 'package:hackathon/pages/intro_page.dart';
+
 import 'package:hackathon/app_state.dart';
 import 'package:hackathon/pages/home_page.dart';
 import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
+
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,6 +30,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       title: "Bengan",
+      theme: demo,
       routerConfig: _router,
     );
   }
