@@ -9,6 +9,7 @@ import 'package:hackathon/pages/intro_page.dart';
 
 import 'package:hackathon/app_state.dart';
 import 'package:hackathon/pages/home_page.dart';
+import 'package:hackathon/pages/product_page.dart';
 import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
 import 'package:wakelock_plus/wakelock_plus.dart';
@@ -41,6 +42,7 @@ class MainApp extends StatelessWidget {
     return MaterialApp.router(
       title: "Hackathon",
       theme: demo,
+      // theme: ThemeData.dark(useMaterial3: true),
       routerConfig: _router,
     );
   }
@@ -50,7 +52,8 @@ final _router = GoRouter(
   routes: [
     GoRoute(
       path: '/',
-      builder: (context, state) => HomePage(),
+      // builder: (context, state) => HomePage(),
+      builder: (context, state) => ProductPage(),
       routes: [
         GoRoute(
           path: 'sign-in',

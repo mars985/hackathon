@@ -17,16 +17,11 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Discover")),
-      body: SafeArea(
-        child: Column(
+      appBar: AppBar(
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Text("hello"),
-            Container(
-              height: 10,
-              width: 10,
-              color: Colors.cyan,
-            ),
+            Text("Discover"),
             Consumer<ApplicationState>(
               builder: (context, appState, _) => AuthFunc(
                   loggedIn: appState.loggedIn,
@@ -34,35 +29,39 @@ class HomePage extends StatelessWidget {
                     FirebaseAuth.instance.signOut();
                   }),
             ),
-            FutureBuilder<List<Map<String, dynamic>>>(
-              future: _productService.getProducts(),
-              builder: (context, snapshot) {
-                if (snapshot.connectionState == ConnectionState.waiting) {
-                  return CircularProgressIndicator();
-                } else if (snapshot.hasError) {
-                  return Text('Error: ${snapshot.error}');
-                } else {
-                  List<Map<String, dynamic>> products = snapshot.data!;
-                  return GridView.builder(
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      crossAxisSpacing: 8.0,
-                      mainAxisSpacing: 8.0,
-                    ),
-                    itemCount: products.length,
-                    itemBuilder: (context, index) {
-                      return ProductCard(
-                        cropname: products[index]["cropname"],
-                        price: products[index]["price"],
-                      );
-                    },
-                    shrinkWrap: true,
-                    scrollDirection: Axis.vertical,
-                  );
-                }
-              },
-            ),
           ],
+        ),
+      ),
+      body: SafeArea(
+        child: FutureBuilder<List<Map<String, dynamic>>>(
+          future: _productService.getProducts(),
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return CircularProgressIndicator();
+            } else if (snapshot.hasError) {
+              return Text('Error: ${snapshot.error}');
+            } else {
+              List<Map<String, dynamic>> products = snapshot.data!;
+              return GridView.builder(
+                padding: EdgeInsets.all(12),
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 12,
+                  mainAxisSpacing: 12,
+                ),
+                // itemCount: products.length,
+                itemCount: 2,
+                itemBuilder: (context, index) {
+                  return ProductCard(
+                    cropname: products[index]["cropname"],
+                    price: products[index]["price"],
+                  );
+                },
+                shrinkWrap: true,
+                scrollDirection: Axis.vertical,
+              );
+            }
+          },
         ),
       ),
     );

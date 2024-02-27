@@ -14,6 +14,6 @@ class ProductListing {
   final String description;
   final String farmername;
   final String price;
-  final String quantity;
+  final String quantity;    // in kg
   final String whenharvested;
 }
