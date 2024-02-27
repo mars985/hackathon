@@ -1,17 +1,26 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_ui_auth/firebase_ui_auth.dart';
 import 'package:flutter/material.dart';
 
 import 'package:hackathon/Themes/Demo.dart';
+import 'package:hackathon/firebase_options.dart';
+import 'package:hackathon/models/product_service.dart';
 import 'package:hackathon/pages/intro_page.dart';
 
 import 'package:hackathon/app_state.dart';
 import 'package:hackathon/pages/home_page.dart';
 import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
+import 'package:wakelock_plus/wakelock_plus.dart';
 
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  WakelockPlus.enable();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 
   runApp(ChangeNotifierProvider(
     create: (context) => ApplicationState(),
@@ -21,6 +30,7 @@ void main() {
 
 class MainApp extends StatelessWidget {
   MainApp({super.key});
+  final ProductService _productService = ProductService();
 
   final List<Widget> _pages = [
     HomePage(),
@@ -29,7 +39,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: "Bengan",
+      title: "Hackathon",
       theme: demo,
       routerConfig: _router,
     );
@@ -40,7 +50,7 @@ final _router = GoRouter(
   routes: [
     GoRoute(
       path: '/',
-      builder: (context, state) => const HomePage(),
+      builder: (context, state) => HomePage(),
       routes: [
         GoRoute(
           path: 'sign-in',

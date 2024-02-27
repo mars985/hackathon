@@ -13,7 +13,7 @@ class ProductListing {
   final String cropname;
   final String description;
   final String farmername;
-  final double price;
-  final double quantity;
+  final String price;
+  final String quantity;
   final String whenharvested;
 }

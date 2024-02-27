@@ -4,7 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class ProductCard extends StatelessWidget {
-  const ProductCard({super.key});
+  const ProductCard({
+    super.key,
+    required this.cropname,
+    required this.price,
+  });
+
+  final String cropname;
+  final String price;
 
   @override
   Widget build(BuildContext context) {
@@ -29,9 +36,7 @@ class ProductCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               ElevatedButton(
-                onPressed: () {
-
-                },
+                onPressed: () {},
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Theme.of(context).colorScheme.background,
                   shape: CircleBorder(),
@@ -49,14 +54,14 @@ class ProductCard extends StatelessWidget {
         ),
         Padding(padding: EdgeInsets.all(5)),
         Text(
-          "Product Name",
+          cropname,
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.w700,
           ),
         ),
         Text(
-          "\$999.99",
+          "\$$price",
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.w700,
