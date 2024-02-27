@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "819121794050",
+    "project_id": "hackathon-farmer-app",
+    "storage_bucket": "hackathon-farmer-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:819121794050:android:a282a16ba02d610414cb1b",
+        "android_client_info": {
+          "package_name": "com.example.hackathon"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAl2PmoivoRJO8ebKIwIOv9fd8aOcfcyJ4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
