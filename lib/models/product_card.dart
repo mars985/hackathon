@@ -16,42 +16,44 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 1 / 1,
+      aspectRatio: 9 / 16,
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(25),
           // color: Theme.of(context).colorScheme.primary,
-          color: Color(0xFF2F3C4D),
+          // color: Color(0xFF2F3C4D),
+          color: Colors.white,
         ),
         child: Column(children: [
-          Container(
-            height: 200,
-            // width: 350,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(25),
-              color: Theme.of(context).colorScheme.inversePrimary,
-              // color: Color(0xFF2F3C4D),
-            ),
-            padding: EdgeInsets.all(5),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                ElevatedButton(
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Theme.of(context).colorScheme.background,
-                    shape: CircleBorder(),
-                    padding: EdgeInsets.all(0),
-                    fixedSize: Size(50, 50),
+          AspectRatio(
+            aspectRatio: 1 / 1,
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25),
+                color: Theme.of(context).colorScheme.inversePrimary,
+                // color: Color(0xFF2F3C4D),
+              ),
+              padding: EdgeInsets.all(5),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Theme.of(context).colorScheme.background,
+                      shape: CircleBorder(),
+                      padding: EdgeInsets.all(0),
+                      fixedSize: Size(50, 50),
+                    ),
+                    child: Icon(
+                      Icons.favorite,
+                      size: 30,
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
                   ),
-                  child: Icon(
-                    Icons.favorite,
-                    size: 30,
-                    color: Theme.of(context).colorScheme.primary,
-                  ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
           Padding(padding: EdgeInsets.all(5)),

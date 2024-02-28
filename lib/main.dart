@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:hackathon/Themes/Demo.dart';
 import 'package:hackathon/firebase_options.dart';
 import 'package:hackathon/models/product_service.dart';
+import 'package:hackathon/pages/cart_page.dart';
 import 'package:hackathon/pages/intro_page.dart';
 
 import 'package:hackathon/app_state.dart';
@@ -52,8 +53,8 @@ final _router = GoRouter(
   routes: [
     GoRoute(
       path: '/',
-      // builder: (context, state) => HomePage(),
-      builder: (context, state) => ProductPage(),
+      builder: (context, state) => HomePage(),
+      // builder: (context, state) => ProductPage(),
       routes: [
         GoRoute(
           path: 'sign-in',
@@ -119,6 +120,14 @@ final _router = GoRouter(
             );
           },
         ),
+        GoRoute(
+          path: 'product-page',
+          builder: (context, state) => ProductPage(),
+        ),
+        // GoRoute(
+        //   path: 'cart-page',
+        //   builder: (context, state) => CartPage(),
+        // ),
       ],
     ),
   ],

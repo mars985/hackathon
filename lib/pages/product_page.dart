@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hackathon/models/navigation_bar.dart';
 
 class ProductPage extends StatelessWidget {
   const ProductPage({
@@ -29,128 +30,139 @@ class ProductPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       maintainBottomViewPadding: true,
-      child: Padding(
-        padding: const EdgeInsets.all(12.0),
-        child: Column(
-          children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                AspectRatio(
-                  aspectRatio: 9 / 9,
-                  child: Container(
-                    child: Center(
-                        child: Text(
-                      "image",
-                      style: TextStyle(fontSize: 14, color: Colors.black),
-                    )),
-                    decoration: BoxDecoration(
-                      color: Color(0xFFF1C4A1),
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                  ),
-                ),
-                SizedBox(height: 12),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      cropname,
-                      style: TextStyle(
-                        fontSize: 22,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
+      child: Scaffold(
+        bottomNavigationBar: MyNavigationBar(),
+        appBar: AppBar(title: Text("Product"),),
+        body: Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: Column(
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  AspectRatio(
+                    aspectRatio: 9 / 9,
+                    child: Container(
+                      child: const Center(
+                          child: Text(
+                        "image",
+                        style: TextStyle(fontSize: 14, color: Colors.black),
+                      )),
+                      decoration: BoxDecoration(
+                        color: const Color(0xFFF1C4A1),
+                        borderRadius: BorderRadius.circular(12),
                       ),
                     ),
-                    Row(
-                      children: [
-                        Text(
-                          "$farmername,",
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: Colors.grey,
-                            fontWeight: FontWeight.w100,
-                          ),
-                        ),
-                        SizedBox(width: 4),
-                        Text(
-                          "$whenharvested,",
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: Colors.grey,
-                            fontWeight: FontWeight.w100,
-                          ),
-                        ),
-                        SizedBox(width: 4),
-                        Text(
-                          "$quantity kg",
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: Colors.grey,
-                            fontWeight: FontWeight.w100,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-                SizedBox(height: 12),
-                Text(
-                  description,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 12,
                   ),
-                ),
-              ],
-            ),
-            Expanded(child: SizedBox()),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Divider(
-                  thickness: 1,
-                  color: Color(0xFF2D3B4A),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Column(
-                      children: [
-                        Text(
-                          "\$2000",
-                          style: TextStyle(fontSize: 20),
-                        ),
-                        Text(
-                          "\$$price/kg",
-                          style: TextStyle(fontSize: 12),
-                        ),
-                      ],
-                    ),
-                    ElevatedButton(
-                        onPressed: () {},
-                        child: Icon(Icons.remove_circle_outline)),
-                    Text(
-                      "20",
-                      style: TextStyle(color: Color(0xFFEA4E25), fontSize: 16),
-                    ),
-                    ElevatedButton(
-                        onPressed: () {},
-                        child: Icon(Icons.add_circle_outline)),
-                    ElevatedButton(
-                      onPressed: () {},
-                      child: Text("Add to cart"),
-                      style: ButtonStyle(
-                        foregroundColor: MaterialStatePropertyAll(
-                          Color(0xFFEA4E25),
+                  const SizedBox(height: 12),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        cropname,
+                        style: const TextStyle(
+                          fontSize: 22,
+                          color: Colors.black87,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
-                    )
-                  ],
-                )
-              ],
-            )
-          ],
+                      Row(
+                        children: [
+                          Text(
+                            "$farmername,",
+                            style: const TextStyle(
+                              fontSize: 16,
+                              color: Colors.black45,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          const SizedBox(width: 4),
+                          Text(
+                            "$whenharvested,",
+                            style: const TextStyle(
+                              fontSize: 16,
+                              color: Colors.black45,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          const SizedBox(width: 4),
+                          Text(
+                            "$quantity kg",
+                            style: const TextStyle(
+                              fontSize: 16,
+                              color: Colors.black45,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 12),
+                  Text(
+                    description,
+                    style: const TextStyle(
+                      color: Colors.black87,
+                      fontSize: 12,
+                    ),
+                  ),
+                ],
+              ),
+              const Expanded(child: SizedBox()),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  const Divider(
+                    thickness: 1,
+                    color: Color(0xFF2D3B4A),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Column(
+                        children: [
+                          const Text(
+                            "\$2000",
+                            style: TextStyle(fontSize: 20),
+                          ),
+                          Text(
+                            "\$$price/kg",
+                            style: const TextStyle(fontSize: 12),
+                          ),
+                        ],
+                      ),
+                      ElevatedButton(
+                          onPressed: () {},
+                          child: const Icon(Icons.remove_circle_outline)),
+                      const Text(
+                        "20",
+                        style: TextStyle(
+                            color: const Color(0xFFEA4E25), fontSize: 16),
+                      ),
+                      Container(
+                        height: 40,
+                        width: 40,
+                        child: const Icon(Icons.add_circle_outline),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.grey.shade700),
+                      ),
+                      ElevatedButton(
+                        onPressed: () {},
+                        child: const Text("Add to cart"),
+                        style: const ButtonStyle(
+                          foregroundColor: MaterialStatePropertyAll(
+                            Color(0xFFEA4E25)
+                          ),
+                          // backgroundColor: MaterialStatePropertyAll(Colors.white),
+                        ),
+                      )
+                    ],
+                  )
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );
