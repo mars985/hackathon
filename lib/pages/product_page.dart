@@ -32,7 +32,7 @@ class ProductPage extends StatelessWidget {
       maintainBottomViewPadding: true,
       child: Scaffold(
         bottomNavigationBar: MyNavigationBar(),
-        appBar: AppBar(title: Text("Product"),),
+        appBar: AppBar(title: Text("Product")),
         body: Padding(
           padding: const EdgeInsets.all(12.0),
           child: Column(
@@ -135,7 +135,7 @@ class ProductPage extends StatelessWidget {
                           onPressed: () {},
                           child: const Icon(Icons.remove_circle_outline)),
                       const Text(
-                        "20",
+                        "1",
                         style: TextStyle(
                             color: const Color(0xFFEA4E25), fontSize: 16),
                       ),
@@ -151,9 +151,8 @@ class ProductPage extends StatelessWidget {
                         onPressed: () {},
                         child: const Text("Add to cart"),
                         style: const ButtonStyle(
-                          foregroundColor: MaterialStatePropertyAll(
-                            Color(0xFFEA4E25)
-                          ),
+                          foregroundColor:
+                              MaterialStatePropertyAll(Color(0xFFEA4E25)),
                           // backgroundColor: MaterialStatePropertyAll(Colors.white),
                         ),
                       )

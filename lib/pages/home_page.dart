@@ -55,20 +55,20 @@ class HomePage extends StatelessWidget {
                   itemCount: products.length,
                   // itemCount: 2,
                   itemBuilder: (context, index) {
-                    // return ProductCard(
-                    //   cropname: products[index]["cropname"],
-                    //   price: products[index]["price"],
-                    // );
-                    return AspectRatio(
-                      aspectRatio: 1/3,
-                      child: Container(
-                        child: Column(
-                          children: [
-                            Text("name", style: TextStyle(color: Colors.black),),
-                          ],
-                        ),
-                      ),
+                    return ProductCard(
+                      cropname: products[index]["cropname"],
+                      price: products[index]["price"],
                     );
+                    // return AspectRatio(
+                    //   aspectRatio: 1/3,
+                    //   child: Container(
+                    //     child: Column(
+                    //       children: [
+                    //         Text("name", style: TextStyle(color: Colors.black),),
+                    //       ],
+                    //     ),
+                    //   ),
+                    // );
                   },
                   shrinkWrap: true,
                   scrollDirection: Axis.vertical,

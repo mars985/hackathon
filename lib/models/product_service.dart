@@ -1,17 +1,16 @@
 import 'dart:async';
-import 'dart:js_interop_unsafe';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class ProductService {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
   Future<void> addProduct(Map<String, dynamic> product) async {
-    await _firestore.collection('newcollection').add(product);
+    await _firestore.collection('shop').add(product);
   }
 
   Future<List<Map<String, dynamic>>> getProducts() async {
     QuerySnapshot<Map<String, dynamic>> querySnapshot =
-        await _firestore.collection('newcollection').get();
+        await _firestore.collection('shop').get();
 
     final List<Map<String, dynamic>> products = querySnapshot.docs
         .map((DocumentSnapshot<Map<String, dynamic>> doc) => doc.data())
